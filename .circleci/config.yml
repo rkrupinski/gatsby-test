@@ -6,14 +6,14 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install deps
-        command: npm ci
+          name: Install deps
+          command: npm ci
       - run:
-        name: Build
-        command: npm run build
+          name: Build
+          command: npm run build
       - run:
-        name: Deploy
-        command: npm run deploy
+          name: Deploy
+          command: npm run deploy
 
 workflows:
   version: 2
