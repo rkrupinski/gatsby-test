@@ -13,10 +13,7 @@ jobs:
           command: npm run build
       - run:
           name: Deploy
-          command: |
-            git config --global user.email circleci@circleci
-            git config --global user.name CircleCI
-            npm run deploy
+          command: npm run deploy
 
 workflows:
   version: 2
