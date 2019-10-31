@@ -1,0 +1,19 @@
+version: 2.1
+jobs:
+  build:
+    branches:
+      only:
+        - master
+    docker:
+      - image: circleci/node:12.12.0
+    steps:
+      - checkout
+      - run:
+        name: Install deps
+        command: npm ci
+      - build:
+        name: Build
+        command: npm run build
+      - deploy:
+        name: Deploy
+        command: npm run deploy
