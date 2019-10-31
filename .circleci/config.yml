@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     branches:
@@ -17,3 +17,12 @@ jobs:
       - deploy:
         name: Deploy
         command: npm run deploy
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+        filters:
+          branches:
+            only: master
