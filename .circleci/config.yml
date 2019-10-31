@@ -13,7 +13,10 @@ jobs:
           command: npm run build
       - run:
           name: Deploy
-          command: npm run deploy
+          command: |
+            git config --global user.email $GH_EMAIL
+            git config --global user.name $GH_USER
+            npm run deploy
 
 workflows:
   version: 2
